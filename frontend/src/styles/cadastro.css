@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cadastro-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+}
+
+.cadastro-box {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-medio {
+  font-size: 16px;
+  padding: 12px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.cadastro-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.cadastro-button.pequeno {
+  width: 60%;
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px auto 0;
+  display: block;
+}
+
+.cadastro-button:hover {
+  background-color: #ffcc00;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-link {
+  display: block;
+  margin-top: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.login-link:hover {
+  color: yellow;
+}

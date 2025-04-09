@@ -1,0 +1,207 @@
+.categorias-container {
+  width: 90%;
+  margin: 20px auto;
+  color: white;
+  position: relative;
+}
+
+/* TÍTULO PERMANENTE NO CANTO SUPERIOR ESQUERDO */
+.titulo-filtro {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+
+FILTRO COM BOTÕES NO LADO DIREITO .filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #666;
+  position: relative;
+}
+
+.filtro-inputs {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.filtro-inputs input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+}
+
+/* ESPAÇAMENTO ENTRE O CAMPO E BOTÕES */
+.filtro-inputs input:last-child {
+  margin-right: 20px;
+}
+
+/* BOTÕES */
+.filtro-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-filtrar {
+  background: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-adicionar {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-limpar {
+  background: #ff8c00;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ============================
+   ESTILIZANDO A TABELA
+   ============================ */
+.categorias-tabela-container {
+  margin-top: 20px;
+  background: #222;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #666;
+}
+
+.categorias-tabela {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.categorias-tabela th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+.categorias-tabela td {
+  padding: 12px;
+  border: 1px solid #444;
+}
+
+.categorias-tabela tr:nth-child(even) {
+  background: #2c2c2c;
+}
+
+.categorias-tabela tr:nth-child(odd) {
+  background: #333;
+}
+
+.categorias-tabela thead {
+  border-bottom: 2px solid #fff;
+}
+
+.categorias-tabela tbody tr {
+  border-bottom: 1px solid #555;
+}
+
+/* BOTÕES DE AÇÃO BRANCOS COM ÍCONES COLORIDOS */
+.acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-acao {
+  background: white;
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-acao:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================
+   MODAL DE ADICIONAR CATEGORIA
+   ============================ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-conteudo {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-conteudo h2 {
+  color: white;
+}
+
+.modal-conteudo input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+}
+
+.modal-botoes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-botoes button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-botoes button:first-child {
+  margin: 5px;
+  background: #28a745;
+  color: white;
+}
+
+.modal-botoes button:last-child {
+  margin: 5px;
+  background: #ff4d4d;
+  color: white;
+}

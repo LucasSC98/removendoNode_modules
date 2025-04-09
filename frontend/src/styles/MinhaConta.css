@@ -1,0 +1,184 @@
+.container-minha-conta {
+  max-width: 1200px;
+  width: 50%;
+  margin: 20px auto;
+  padding: 15px;
+  color: white;
+}
+
+.container-minha-conta h1 {
+  color: yellow;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.container-formulario {
+  background-color: #1e1e2f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.grupo-formulario {
+  margin-bottom: 15px;
+}
+
+.grupo-formulario label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ddd;
+  font-size: 14px;
+}
+
+.grupo-formulario input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #2c2c3c;
+  color: white;
+  font-size: 14px;
+}
+
+.grupo-formulario input:disabled {
+  background-color: #232330;
+  cursor: not-allowed;
+}
+
+/* Estilo para destacar o campo de email */
+.campo-email {
+  background-color: #232330 !important;
+  border-color: #333 !important;
+  opacity: 0.9; /* Para parecer menos "desabilitado" */
+}
+
+.nota-email {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.secao-senha {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.secao-senha h2 {
+  margin-bottom: 15px;
+  color: #ddd;
+  font-size: 16px;
+}
+
+/* Estilo para o indicador de carregamento */
+.container-carregando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  color: #ddd;
+}
+
+/* Melhor indicador de carregamento */
+.spinner-carregando {
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid yellow;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.acoes-formulario {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.botao-salvar {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.botao-salvar:hover {
+  background-color: #ffcc00;
+}
+
+/* Mantendo as classes antigas para compatibilidade */
+.minha-conta-container,
+.user-account-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  color: white;
+}
+
+.form-container,
+.user-form-container {
+  background-color: #1e1e2f;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-group,
+.user-form-group {
+  margin-bottom: 15px;
+}
+
+.form-section,
+.user-password-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.loading-container,
+.user-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  color: #ddd;
+}
+
+.form-actions,
+.user-form-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-salvar,
+.user-save-btn {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}

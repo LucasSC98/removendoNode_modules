@@ -1,0 +1,165 @@
+.usuarios-container {
+  width: 90%;
+  margin: 20px auto;
+  color: white;
+  position: relative;
+}
+
+.titulo-filtro {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  font-size: 20px;
+  color: #ffeb3b;
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  background: #222;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #666;
+}
+
+.filtro-inputs {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.filtro-inputs input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  background: #333;
+  border: 1px solid #666;
+  color: #fff;
+}
+
+.filtro-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-filtrar {
+  background: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-adicionar {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-limpar {
+  background: #ff8c00;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.usuarios-tabela-container {
+  background: #222;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: 1px solid #666;
+}
+
+.usuarios-tabela {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.usuarios-tabela th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+.usuarios-tabela td {
+  padding: 12px;
+  border: 1px solid #444;
+}
+
+.acoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  height: 100%;
+}
+
+.btn-acao {
+  background: #fff;
+  padding: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-container {
+  background: #222;
+  border-radius: 15px;
+  padding: 20px;
+  width: 400px;
+}
+
+.modal-container input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #666;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-confirm {
+  background: #28a745;
+  color: #fff;
+}
+
+.btn-cancel {
+  background: #dc3545;
+  color: #fff;
+}

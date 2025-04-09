@@ -1,0 +1,623 @@
+.veiculos-container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 40px auto;
+  color: white;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.titulo-filtro {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.titulo-filtro::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #ffd700;
+  border-radius: 3px;
+}
+
+.veiculo-status {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+.status-disponivel {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #2ecc71;
+  border: 1px solid #2ecc71;
+}
+
+.status-alugado {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+
+.status-manutencao {
+  background-color: rgba(243, 156, 18, 0.2);
+  color: #f39c12;
+  border: 1px solid #f39c12;
+}
+
+.botao-alugar {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 15px auto;
+  display: block;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+.botao-alugar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.4);
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.botao-cancelar {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  margin: 15px auto;
+  display: block;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.botao-cancelar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+}
+
+.btn-acao:disabled {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #222, #333);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.filtro-inputs {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.filtro-inputs input,
+.filtro-inputs select {
+  padding: 12px 15px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  background: rgba(51, 51, 51, 0.8);
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.filtro-inputs input:focus,
+.filtro-inputs select:focus {
+  border-color: #ffd700;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+}
+
+.filtro-inputs input::placeholder {
+  color: #888;
+}
+
+.filtro-inputs input[name="ano"],
+.filtro-inputs input[name="placa"],
+.filtro-inputs input[name="preco_por_dia"] {
+  width: 120px;
+}
+
+.filtro-botoes {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-filtrar {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-filtrar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(46, 204, 113, 0.4);
+}
+
+.btn-adicionar {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-adicionar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+}
+
+.btn-limpar {
+  background: linear-gradient(135deg, #f39c12, #d35400);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-limpar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(243, 156, 18, 0.4);
+}
+
+/* Cards de veículos com rolagem */
+.veiculos-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Scroll personalizado */
+.veiculos-card-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.veiculos-card-container::-webkit-scrollbar-track {
+  background: #222;
+  border-radius: 10px;
+}
+
+.veiculos-card-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  border-radius: 10px;
+}
+
+.veiculos-card-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ffa500, #ffd700);
+}
+
+.veiculo-card {
+  background: linear-gradient(145deg, #222, #2d2d2d);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.veiculo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.veiculo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd700, #ffa500);
+  border-radius: 3px 3px 0 0;
+}
+
+.veiculo-card-header h3 {
+  font-size: 20px;
+  color: #ffd700;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.veiculo-categoria {
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.veiculo-imagem {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.veiculo-card:hover .veiculo-imagem {
+  transform: scale(1.03);
+}
+
+.veiculo-card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.veiculo-linha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #eee;
+  font-size: 14px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.veiculo-linha:last-child {
+  border-bottom: none;
+}
+
+.linha-destaque {
+  font-weight: 600;
+  color: #ffa500;
+}
+
+.acoes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-acao {
+  background: rgba(51, 51, 51, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.btn-acao:hover {
+  transform: translateY(-3px);
+}
+
+.icon-edit {
+  color: #f39c12;
+  font-size: 18px;
+}
+
+.btn-acao:hover .icon-edit {
+  color: #f1c40f;
+}
+
+.icon-trash {
+  color: #e74c3c;
+  font-size: 18px;
+}
+
+.btn-acao:hover .icon-trash {
+  color: #ff6b6b;
+}
+
+.btn-alugar {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #111;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.btn-alugar:hover {
+  background: linear-gradient(135deg, #ffa500, #ffd700);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-inputs {
+    flex-direction: column;
+  }
+
+  .filtro-botoes {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .veiculos-card-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.rent-veiculos-container {
+  width: 95%;
+  max-width: 1400px;
+  margin-top: 80px;
+  color: white;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.rent-titulo-filtro {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.rent-titulo-filtro::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #ffd700;
+  border-radius: 3px;
+}
+
+.rent-filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #222, #333);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+}
+
+.rent-filtro-inputs {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.rent-filtro-inputs input,
+.rent-filtro-inputs select {
+  padding: 12px 15px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  background: rgba(51, 51, 51, 0.8);
+  color: white;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-left: 10px;
+}
+
+.rent-btn-adicionar {
+  background: linear-gradient(135deg, #c6d2da, #2980b9);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+  margin-right: 15px;
+}
+
+.rent-btn-limpar {
+  background: linear-gradient(135deg, #6d0b0b, #ff0c0c);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.rent-veiculos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.rent-veiculo-card {
+  background: linear-gradient(145deg, #222, #2d2d2d);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.rent-veiculo-header h3 {
+  font-size: 20px;
+  color: #ffd700;
+  margin-bottom: 8px;
+}
+
+.rent-veiculo-categoria {
+  font-size: 14px;
+  color: #bbb;
+  margin-bottom: 15px;
+}
+
+.rent-veiculo-imagem {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.rent-veiculo-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rent-veiculo-linha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #eee;
+}
+
+.rent-acoes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.rent-btn-acao {
+  background: rgba(51, 51, 51, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.rent-icon-edit {
+  color: #f39c12;
+  font-size: 18px;
+}
+
+.rent-icon-trash {
+  color: #e74c3c;
+  font-size: 18px;
+}
+
+.rent-btn-alugar {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.rent-btn-cancelar {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .rent-filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rent-filtro-inputs {
+    flex-direction: column;
+  }
+
+  .rent-filtro-botoes {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .rent-veiculos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}

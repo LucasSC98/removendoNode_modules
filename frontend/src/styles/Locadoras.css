@@ -1,0 +1,148 @@
+.locadoras-container {
+  width: 90%;
+  margin: 20px auto;
+  color: white;
+  position: relative;
+}
+
+/* TÍTULO PERMANENTE NO CANTO SUPERIOR ESQUERDO */
+.titulo-filtro {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+
+/* FILTRO COM BOTÕES NO LADO DIREITO */
+.filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #666;
+  position: relative;
+}
+
+.filtro-inputs {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.filtro-inputs input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  background: #333;
+  color: white;
+}
+
+/* Espaçamento entre último input e botões */
+.filtro-inputs input:last-child {
+  margin-right: 20px;
+}
+
+.filtro-botoes {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Botão FILTRAR com cor roxa */
+.btn-buscar {
+  background: #6f42c1;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Botão ADICIONAR com cor azul */
+.btn-filtrar {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Botão LIMPAR com cor laranja */
+.btn-limpar {
+  background: #ff8c00;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ============================ TABELA ============================ */
+.locadoras-tabela-container {
+  margin-top: 20px;
+  background: #222;
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #666;
+}
+
+.locadoras-tabela {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.locadoras-tabela th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+.locadoras-tabela td {
+  padding: 12px;
+  border: 1px solid #444;
+}
+
+.locadoras-tabela tr:nth-child(even) {
+  background: #2c2c2c;
+}
+
+.locadoras-tabela tr:nth-child(odd) {
+  background: #333;
+}
+
+.locadoras-tabela thead {
+  border-bottom: 2px solid #fff;
+}
+
+.locadoras-tabela tbody tr {
+  border-bottom: 1px solid #555;
+}
+
+/* BOTÕES DE AÇÃO */
+.acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-acao {
+  background: white;
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-acao:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
