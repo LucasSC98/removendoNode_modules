@@ -205,3 +205,148 @@ FILTRO COM BOTÕES NO LADO DIREITO .filtros {
   background: #ff4d4d;
   color: white;
 }
+
+/* Melhorar cards de categorias */
+.categoriaCard {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, #1e1e2f, #2b2b40);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #f8f9fa;
+}
+
+.categoriaCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 123, 255, 0.3);
+}
+
+/* Estilizar cabeçalhos */
+.categoriaCard h3 {
+  color: #f8f9fa;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.categoriaCard h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, #4a90e2, #007bff);
+  border-radius: 4px;
+}
+
+/* Botões de ação */
+.categoriaCard button {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  margin-top: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.categoriaCard button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.categoriaCard .btn-editar {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.categoriaCard .btn-excluir {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Modal de categoria */
+.categoriaModal {
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  background-color: #1e1e2f;
+  color: #f8f9fa;
+}
+
+.categoriaModal .modal-header {
+  background: linear-gradient(to right, #1e1e2f, #2b2b40);
+  color: white;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.categoriaModal .modal-body {
+  padding: 20px;
+}
+
+.categoriaModal .modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.categoriaModal input {
+  border-radius: 8px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f8f9fa;
+}
+
+.categoriaModal input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.categoriaModal label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  color: #f8f9fa;
+}
+
+/* Grid de categorias */
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .categorias-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .categorias-grid {
+    grid-template-columns: 1fr;
+  }
+}

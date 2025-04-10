@@ -5,12 +5,14 @@ import Home from "./pages/home";
 import Usuarios from "./pages/Usuarios";
 import Locadoras from "./pages/Locadoras";
 import Veiculos from "./pages/Veiculos";
+import VeiculoDetalhes from "./pages/VeiculoDetalhes";
 import Categorias from "./pages/Categorias";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import PrivateRoute from "./components/PrivateRoutes";
 import MinhaConta from "./pages/MinhaConta";
+import "./styles/App.css";
 
 type UserType = {
   nome: string;
@@ -41,17 +43,9 @@ function App() {
   // Enquanto está carregando, mostra uma tela de carregamento
   if (isLoading) {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          background: "#000",
-          color: "#fff",
-        }}
-      >
-        Carregando...
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+        <p>Carregando...</p>
       </div>
     );
   }
@@ -59,13 +53,13 @@ function App() {
   return (
     <BrowserRouter>
       {user ? (
-        <div style={{ display: "flex", height: "100vh" }}>
+        <div className="app-container">
           <Sidebar
             isMinimized={isMinimized}
             setIsMinimized={setIsMinimized}
             user={user}
           />
-          <main style={{ flex: 1, padding: "10px", margin: 0 }}>
+          <main className={`main-content ${isMinimized ? "minimized" : ""}`}>
             <Routes>
               <Route path="/" element={<Navigate to="/home" />} />
 
@@ -103,6 +97,14 @@ function App() {
                 }
               />
               <Route
+                path="/veiculos/:id"
+                element={
+                  <PrivateRoute>
+                    <VeiculoDetalhes />
+                  </PrivateRoute>
+                }
+              />
+              <Route
                 path="/usuarios"
                 element={
                   <PrivateRoute>
@@ -129,13 +131,15 @@ function App() {
           </main>
         </div>
       ) : (
-        <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/login" element={<Login setUser={setUser} />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/esqueci-senha" element={<ForgotPassword />} />
-          <Route path="*" element={<Navigate to="/login" />} />
-        </Routes>
+        <div className="auth-container">
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<Login setUser={setUser} />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/esqueci-senha" element={<ForgotPassword />} />
+            <Route path="*" element={<Navigate to="/login" />} />
+          </Routes>
+        </div>
       )}
     </BrowserRouter>
   );

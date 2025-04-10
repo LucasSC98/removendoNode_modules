@@ -20,11 +20,12 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h1>
-        Olá, <span className="user-name">{nomeUsuario}</span>!
-      </h1>
-      <br />
-      <h2>Seja Bem Vindo ao sistema de Locações</h2>
+      <div className="welcome-section">
+        <h1>
+          Olá, <span className="user-name">{nomeUsuario}</span>!
+        </h1>
+        <p className="welcome-text">Bem-vindo ao seu painel de controle de Locações</p>
+      </div>
     </div>
   );
 }

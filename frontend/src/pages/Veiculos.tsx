@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Veiculos.css";
 import {
   FiTrash,
@@ -9,6 +10,7 @@ import {
   FiDollarSign,
   FiPlus,
   FiRefreshCw,
+  FiInfo,
 } from "react-icons/fi";
 import api from "../services/api";
 import Swal from "sweetalert2";
@@ -56,6 +58,8 @@ const Veiculos = () => {
   const [locadoras, setLocadoras] = useState<{ id: number; nome: string }[]>(
     []
   );
+
+  const navigate = useNavigate();
 
   const obterCategoriasELocadoras = useCallback(async () => {
     try {
@@ -411,6 +415,13 @@ const Veiculos = () => {
               </div>
               <div className="rent-acoes-container">
                 <div className="rent-acoes">
+                  <button
+                    className="rent-btn-acao"
+                    title="Detalhes"
+                    onClick={() => navigate(`/veiculos/${veiculo.id}`)}
+                  >
+                    <FiInfo className="rent-icon-info" />
+                  </button>
                   <button
                     className="rent-btn-acao"
                     title="Editar"

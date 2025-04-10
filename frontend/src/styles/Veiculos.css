@@ -420,22 +420,30 @@
 .rent-veiculos-container {
   width: 95%;
   max-width: 1400px;
-  margin-top: 80px;
+  margin: 10px auto;
   color: white;
   position: relative;
   font-family: "Poppins", sans-serif;
 }
 
+.rent-filtros-container {
+  margin-bottom: 20px;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
 .rent-titulo-filtro {
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 24px;
   font-weight: 700;
   color: #ffd700;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
 
 .rent-titulo-filtro::after {
@@ -451,23 +459,36 @@
 
 .rent-filtros {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   background: linear-gradient(145deg, #222, #333);
-  padding: 20px;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: 15px;
   border: 1px solid #444;
   flex-wrap: wrap;
-  gap: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px;
+  gap: 20px;
 }
 
 .rent-filtro-inputs {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   flex: 1;
   flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.rent-filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.rent-filtro-label {
+  color: #ffd700;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .rent-filtro-inputs input,
@@ -480,7 +501,21 @@
   font-size: 14px;
   transition: all 0.3s ease;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-left: 10px;
+  width: 100%;
+}
+
+.rent-filtro-inputs input:focus,
+.rent-filtro-inputs select:focus {
+  border-color: #ffd700;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+}
+
+.rent-filtro-botoes {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .rent-btn-adicionar {
@@ -599,6 +634,10 @@
   border-radius: 10px;
   margin-top: 15px;
   cursor: pointer;
+}
+
+.rent-icon-info {
+  color: #3498db;
 }
 
 /* Responsividade */

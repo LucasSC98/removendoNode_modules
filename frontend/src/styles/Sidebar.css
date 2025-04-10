@@ -1,49 +1,57 @@
 .sidebar {
-  width: 200px;
+  width: 250px;
   background-color: #1e1e2f;
   color: white;
   height: 100vh;
   display: flex;
   flex-direction: column;
   transition: width 0.3s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .user-profile-button {
   background-color: #007bff;
-  /* Azul bonito */
   color: white;
   border: none;
   width: 80%;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   margin: 0 auto;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .user-profile-button:hover {
   background-color: #0056b3;
-  /* Azul escuro ao passar o mouse */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar.minimized {
-  width: 60px;
+  width: 70px;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin-top: 10px;
 }
-
 
 .sidebar ul li {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 5px 15px;
+  margin-bottom: 5px;
 }
 
 .sidebar ul li a {
@@ -51,13 +59,21 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-radius: 5px;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
 .sidebar ul li a:hover {
   background-color: #2b2b40;
+  transform: translateX(5px);
+}
+
+.sidebar ul li a.active {
+  background-color: #007bff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Botão de abrir/fechar menu */
@@ -68,21 +84,23 @@
   padding: 15px;
   width: 100%;
   text-align: left;
+  transition: all 0.3s ease;
 }
 
 .menu-icon {
   color: white;
-  /* Mantém a mesma cor dos outros ícones */
+  transition: all 0.3s ease;
 }
 
-.menu-icon:hover {
-  background-color: #2b2b40;
+.menu-toggle:hover .menu-icon {
+  transform: scale(1.1);
 }
 
 /* Perfil do usuário */
 .user-profile {
   text-align: center;
-  margin: 15px 0;
+  margin: 20px 0;
+  padding: 0 15px;
 }
 
 .profile-img {
@@ -90,6 +108,7 @@
   height: 60px;
   border-radius: 50%;
   margin-bottom: 5px;
+  border: 3px solid #007bff;
 }
 
 /* Oculta o nome quando minimizado */
@@ -107,27 +126,48 @@
   background-color: #cc0000;
   color: white;
   border: none;
-  width: 65%;
-  padding: 10px;
-  border-radius: 5px;
+  width: 80%;
+  padding: 12px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logout-button:hover {
   background-color: #a30000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .button {
-  padding-top: 75px;
-  padding-left: 20px;
+  margin-top: auto;
+  padding: 20px 15px;
 }
 
-
 .sideBar {
-  padding-top: 30px;
+  padding-top: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBarHome {
+  margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+  }
+  
+  .sidebar.minimized {
+    width: 60px;
+  }
 }
